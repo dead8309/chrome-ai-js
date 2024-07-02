@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div class="app">
+      <div
+        class="flex flex-col min-h-screen w-full mx-auto bg-background rounded-lg shadow-lg"
+      >
+        <header
+          class="sticky top-0 z-40 bg-background/40 backdrop-blur supports-[backdrop-filter]:bg-background/10 px-4 py-3 border-b"
+        >
+          <div class="mx-2 md:mx-8 flex items-center gap-3">
+            <span
+              class="relative flex shrink-0 overflow-hidden rounded-full w-8 h-8"
+            >
+              <img
+                class="aspect-square h-full w-full"
+                alt="Gemini Nano Logo"
+                src="/ai.webp"
+              />
+            </span>
+            <div class="text-lg font-semibold text-primary">Gemini Nano</div>
+          </div>
+        </header>
+
+        <main class="flex-1 p-4 overflow-y-auto bg-secondary">
+          <div id="chat" class="grid gap-4 mx-2 md:mx-[20vw]"></div>
+        </main>
+
+        <div class="sticky w-full bottom-0 bg-card py-3 border-t">
+          <form class="flex items-center gap-2 mx-2 md:mx-[20vw]" id="form">
+            <textarea
+              id="prompt"
+              name="prompt"
+              class="flex min-h-[80px] w-full border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 flex-1 resize-none rounded-lg pr-12"
+              placeholder="Type your message..."
+            ></textarea>
+            <button
+              type="submit"
+              id="send"
+              class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 w-10 rounded-full"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-5 h-5"
+              >
+                <path d="m22 2-7 20-4-9-9-4Z"></path>
+                <path d="M22 2 11 13"></path>
+              </svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="./src/index.js"></script>
+  </body>
+</html>
